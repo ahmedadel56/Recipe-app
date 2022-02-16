@@ -17,4 +17,5 @@ class Ability
       can :create, Food
       can :destroy, Food, user: user
     end
+  end
 end

@@ -1,4 +1,4 @@
-class IngredientController < ApplicationController
+class IngredientsController < ApplicationController
   def new
     @ingredients = Food.all.map { |food| [food.name, food.id] }
   end

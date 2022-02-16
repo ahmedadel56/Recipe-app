@@ -1,4 +1,4 @@
-class PublicRecipeController < ApplicationController
+class PublicRecipesController < ApplicationController
   def index
     @recipes = Recipe.includes(:recipe_foods, :foods).where(public: true).order('created_at DESC').map do |recipe|
       {
