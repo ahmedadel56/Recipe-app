@@ -3,6 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,:trackable
+
+  validates :name, presence: true, length: { minimum: 5, maximum: 50 }
+  
   has_many :foods
   has_many :recipes
 end
