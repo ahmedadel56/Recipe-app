@@ -1,4 +1,6 @@
 class RecipeController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   def index
     @recipes = Recipe.where(user_id: current_user.id)
   end
