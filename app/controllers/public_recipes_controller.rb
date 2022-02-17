@@ -4,7 +4,6 @@ class PublicRecipesController < ApplicationController
       {
         id: recipe.id,
         name: recipe.name,
-        user: recipe.user.name,
         ingredients_amount: recipe.recipe_foods.count,
         ingredients_price: recipe.foods.map(&:price).sum
       }
