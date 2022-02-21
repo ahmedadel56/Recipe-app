@@ -1,0 +1,39 @@
+<!-- Nav menu with user information -->
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark pmd-navbar pmd-z-depth fixed-top">
+    <a class="navbar-brand" href="#">Granny's Recipes</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: "nav-link active" %>
+        </li>
+        <li class="nav-item">
+         <%= link_to "Food", foods_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "My Recipes", recipes_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Public Recipes", public_recipes_path, class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Sign In/Out
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <% if user_signed_in? %>
+              <li><%= link_to 'Sign Out', destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete } %></li>
+            <% else %>
+              <li><%= link_to 'Sign In', new_user_session_path, class: "dropdown-item" %></li>              
+            <% end %>
+          </ul>
+        </li>
+      </ul>
+    </div>
+</nav>
+<br>
+<br>

@@ -1,0 +1,17 @@
+<h1 style="text-align:center">Public Recipes</h1>
+
+<div class="m-auto col-8">
+  <% @recipes.each do |recipe| %>
+    <div class="card shadow m-3">
+      <div class="card-body d-flex flex-row justify-content-between m-2">
+        <div>
+          <h2><%= link_to recipe[:name], recipe_path(id: recipe[:id]), class: "link-primary ms-2" %></h2>
+        </div>
+        <div class="card-text">
+          <p>Total food items: <%= recipe[:ingredients_amount] %></p>
+          <p>Total price: <%= recipe[:ingredients_price] %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
